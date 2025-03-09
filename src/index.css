@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+	--header-height: 4rem;
+	--bg-body: #fafafa;
+	--title-color: #404145;
+	--text-color: #62646A;
+}
+
+body {
+	min-height: 100dvh;
+	background-color: var(--bg-body);
+	color: var(--text-color);
+	font-family: 'Inter', system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--title-color);
+}
+
+.main-layout {
+	min-height: 100dvh;
+	display: grid;
+	grid-template-rows: var(--header-height) 1fr;
+	grid-template-columns: calc(100dvw/6) 1fr;
+	grid-template-areas:
+		"nav	header"
+		"nav		main"
+	;
+
+	header {
+		grid-area: header;
+	}
+
+	nav {
+		grid-area: nav;
+	}
+
+	main {
+		grid-area: main;
+	}
+}
